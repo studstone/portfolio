@@ -79,25 +79,32 @@ const NavLink = styled.a`
     }
 `;
 
-const Navigation = ({ activeState }) => (
-    <>
-        <NavWrapper visible={activeState}>
-            <NavList>
-                <NavItem>
-                    <NavLink href="#preview">Домашняя</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="#about">Обо мне</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="#work">Мои работы</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink href="#footer">Контакты</NavLink>
-                </NavItem>
-            </NavList>
-        </NavWrapper>
-    </>
-);
+const Navigation = ({ activeState, setActiveState }) => {
+
+    const togleAtribute = () => {
+        setActiveState(prevState => !prevState);
+    };
+
+    return (
+        <>
+            <NavWrapper visible={activeState}>
+                <NavList>
+                    <NavItem onClick={togleAtribute}>
+                        <NavLink href="#preview">Домашняя</NavLink>
+                    </NavItem>
+                    <NavItem onClick={togleAtribute}>
+                        <NavLink href="#about">Обо мне</NavLink>
+                    </NavItem>
+                    <NavItem onClick={togleAtribute}>
+                        <NavLink href="#work">Мои работы</NavLink>
+                    </NavItem>
+                    <NavItem onClick={togleAtribute}>
+                        <NavLink href="#footer">Контакты</NavLink>
+                    </NavItem>
+                </NavList>
+            </NavWrapper>
+        </>
+    );
+};
 
 export default Navigation;

@@ -49,13 +49,13 @@ const BurgerLine = styled.span`
 
 const BurgerMenu = ({ activeState, setActiveState }) => {
 
-    const openMenu = () => {
+    const togleAtribute = () => {
         setActiveState(prevState => !prevState);
     };
 
     return (
         <>
-            <ButtonBurger visible={activeState} onClick={openMenu}>
+            <ButtonBurger visible={activeState} onClick={togleAtribute}>
                 <BurgerLine visible={activeState} />
             </ButtonBurger>
         </>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import device from '../StyledComponents/Breakpoint';
 
 const NavWrapper = styled.nav`
     position: fixed;
@@ -11,10 +12,32 @@ const NavWrapper = styled.nav`
     z-index: 999;
     transform: ${props => (props.visible ? 'translateX(100%)' : 'translateX(0)')};
     transition: transform 0.5s ease-in-out;
+
+    @media ${device.tablet} {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: translateX(0);
+    }
+
+    @media ${device.laptop} {
+        width: 50%;
+    }
+
+    @media ${device.desktop} {
+        width: 30%;
+    }
 `;
 
 const NavList = styled.ul`
     padding: 2rem 0 0 0;
+
+    @media ${device.tablet} {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+    }
 `;
 
 const NavItem = styled.li`
@@ -23,6 +46,18 @@ const NavItem = styled.li`
     &:last-child{
         margin-bottom: 0;
     }
+
+    @media ${device.tablet} {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+
+    @media ${device.laptop} {
+        transition: border-bottom 0.3s ease;
+        :hover {
+            border-bottom: 1px solid var(--color-border);
+        }
+    }
 `;
 
 const NavLink = styled.a`
@@ -30,6 +65,18 @@ const NavLink = styled.a`
     text-align: center;
     font-size: 2rem;
     padding: 0 0 0.5rem 0;
+
+    @media ${device.tablet} {
+        padding: 0;
+    }
+
+    @media ${device.laptop} {
+        font-size: 2.4rem;
+    }
+
+    @media ${device.laptopL} {
+        font-size: 3.2rem;
+    }
 `;
 
 const Navigation = ({ activeState }) => (

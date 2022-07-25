@@ -1,12 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 import 'animate.css';
+import device from '../StyledComponents/Breakpoint';
 
 const LogoSvg = styled.svg`
     display: inline-block;
     width: 2rem;
     height: 4rem;
     margin-right: 10px;
+
+    @media ${device.tablet} {
+        width: 2.5rem;
+        height: 5rem;
+        margin-right: 20px;
+    }
+
+    @media ${device.laptopL} {
+        width: 3rem;
+        height: 6rem;
+    }
 `;
 
 const LogoHeadBack = styled.path`
@@ -33,6 +45,14 @@ const LogoTitle = styled.h1`
     display: inline-block;
     color: white;
     margin-right: auto;
+
+    @media ${device.tablet} {
+        font-size: 2.5rem;
+    }
+
+    @media ${device.laptopL} {
+        font-size: 4rem;
+    }
 `;
 
 const Logo = () => (

@@ -73,6 +73,7 @@ input::-webkit-inner-spin-button {
   --color-icon: #00c4f0;
   --background-button: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
   --color-text: #e4e4e4;
+  --color-border:  #E2A300;
 }
 `;
 

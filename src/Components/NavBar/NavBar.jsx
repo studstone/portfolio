@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import BurgerMenu from './BurgerMenu';
 import Logo from './Logo';
 import Navigation from './Navigation';
+import { Container } from '../StyledComponents/Container';
 
 const NavbarStyled = styled.header`
     position: fixed;
@@ -11,11 +12,6 @@ const NavbarStyled = styled.header`
     right: 0;
     padding: 1.3rem 0;
     background-color: var(--color-background);
-`;
-
-const Container = styled.div`
-    width: 30rem;
-    margin: auto;
 `;
 
 const NavBarWrapper = styled.div`

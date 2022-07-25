@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import device from '../StyledComponents/Breakpoint';
 
 const ButtonBurger = styled.button`
     position: relative;
@@ -29,6 +30,10 @@ const ButtonBurger = styled.button`
         bottom: ${props => (props.visible ? '0' : 'auto')};
         transform: ${props => (props.visible ? 'rotate(0deg)' : 'rotate(-45deg)')};
     }
+
+    @media ${device.tablet} {
+        display: none;
+    }
 `;
 const BurgerLine = styled.span`
     position: absolute;
@@ -44,13 +49,13 @@ const BurgerLine = styled.span`
 
 const BurgerMenu = ({ activeState, setActiveState }) => {
 
-    const addAtribute = () => {
+    const openMenu = () => {
         setActiveState(prevState => !prevState);
     };
 
     return (
         <>
-            <ButtonBurger visible={activeState} onClick={addAtribute}>
+            <ButtonBurger visible={activeState} onClick={openMenu}>
                 <BurgerLine visible={activeState} />
             </ButtonBurger>
         </>

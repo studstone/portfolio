@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import device from '../StyledComponents/Breakpoint';
 
@@ -79,10 +79,24 @@ const NavLink = styled.a`
     }
 `;
 
+const Blur = styled.div`
+    position: fixed;
+    top: 66px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+    transition: transform 0.5s ease-in-out;
+    transform: ${props => (props.visible ? 'translateX(-100%)' : 'translateX(0)')};
+
+`;
+
 const Navigation = ({ activeState, setActiveState, items }) => {
+    const box = useRef(null);
 
     const togleAtribute = () => {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 768 || box.curent) {
             setActiveState(prevState => !prevState);
         }
     };
@@ -103,6 +117,11 @@ const Navigation = ({ activeState, setActiveState, items }) => {
                         </NavList> : ''
                 }
             </NavWrapper>
+            {
+                window.innerWidth < 768 ?
+                    <Blur ref={box} visible={activeState} onClick={togleAtribute} /> :
+                    ''
+            }
         </>
     );
 };

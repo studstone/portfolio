@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 const ClobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
@@ -17,6 +16,7 @@ const ClobalStyle = createGlobalStyle`
     margin: 0;
     background-color: #ffffff;
     font-family: 'Roboto', sans-serif;
+    font-weight: 400;
     color: var(--color-text);
     overflow-x: hidden;
     min-height: 2000rem;
@@ -41,7 +41,8 @@ const ClobalStyle = createGlobalStyle`
   h1,
   h2,
   h3 {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
     padding: 0;
     margin: 0;
   }
@@ -53,6 +54,7 @@ const ClobalStyle = createGlobalStyle`
 
   button {
     cursor: pointer;
+    border: none;
   }
 
   input, button {
@@ -69,11 +71,13 @@ input::-webkit-inner-spin-button {
 }
 
 :root {
-  --color-background: #2a2a2a;
+  --background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);;
   --color-icon: #00c4f0;
   --background-button: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
   --color-text: #e4e4e4;
   --color-border:  #E2A300;
+  --background-button: linear-gradient(87.32deg, #E2A300 4.47%, #E29500 95.53%);
+  --background-circle: linear-gradient(130.68deg, #414141 0%, #2D2D2D 100.52%);
 }
 `;
 

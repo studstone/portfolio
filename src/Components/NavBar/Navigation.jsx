@@ -8,7 +8,7 @@ const NavWrapper = styled.nav`
     top: 6.6rem;
     width: 60%;
     bottom: 0;
-    background-color: var(--color-background);
+    background: var(--background);
     z-index: 999;
     transform: ${props => (props.visible ? 'translateX(100%)' : 'translateX(0)')};
     transition: transform 0.5s ease-in-out;
@@ -90,15 +90,18 @@ const Navigation = ({ activeState, setActiveState, items }) => {
     return (
         <>
             <NavWrapper visible={activeState}>
-                <NavList>
-                    {
-                        items.map((item, index) =>
-                            <NavItem key={index} onClick={togleAtribute}>
-                                <NavLink href={item.href}>{item.value}</NavLink>
-                            </NavItem>
-                        )
-                    }
-                </NavList>
+                {
+                    !activeState || window.innerWidth >= 768 ?
+                        <NavList>
+                            {
+                                items.map((item, index) =>
+                                    <NavItem key={index} onClick={togleAtribute}>
+                                        <NavLink href={item.href}>{item.value}</NavLink>
+                                    </NavItem>
+                                )
+                            }
+                        </NavList> : ''
+                }
             </NavWrapper>
         </>
     );

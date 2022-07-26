@@ -4,6 +4,7 @@ import BurgerMenu from './BurgerMenu';
 import Logo from './Logo';
 import Navigation from './Navigation';
 import { Container } from '../StyledComponents/Container';
+import { FlexWrapper } from '../StyledComponents/FlexWrapper';
 
 const NavbarStyled = styled.header`
     position: fixed;
@@ -11,11 +12,11 @@ const NavbarStyled = styled.header`
     left: 0;
     right: 0;
     padding: 1.3rem 0;
-    background-color: var(--color-background);
+    background: var(--background);
+    z-index: 999;
 `;
 
-const NavBarWrapper = styled.div`
-    display: flex;
+const NavBarWrapper = styled(FlexWrapper)`
     align-items: center;
 `;
 
@@ -26,7 +27,10 @@ const NavBar = ({ activState, items }) => (
                 <NavBarWrapper>
                     <Logo />
                     <Navigation {...activState} items={items} />
-                    <BurgerMenu {...activState} />
+                    {
+                        window.innerWidth < 768 &&
+                        <BurgerMenu {...activState} />
+                    }
                 </NavBarWrapper>
             </Container>
         </NavbarStyled>

@@ -45,6 +45,7 @@ const LogoTitle = styled.h1`
     display: inline-block;
     color: white;
     margin-right: auto;
+    letter-spacing: 1px;
 
     @media ${device.tablet} {
         font-size: 2.5rem;
@@ -110,7 +111,7 @@ const Logo = () => (
         32.6358 19.5598 31.502C20.4367 30.6698 20.6441 30.4321 20.4555 30.4504C20.4084 30.4504 19.7861
         30.8436 19.0601 31.3191Z" fill="#00C4F0" />
         </LogoSvg>
-        <LogoTitle>Studestone</LogoTitle>
+        <LogoTitle>Studstone</LogoTitle>
     </>
 );
 

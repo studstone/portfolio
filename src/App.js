@@ -1,6 +1,7 @@
 import React from "react";
 import useActiveState from "./Components/Hooks/useActiveState";
 import NavBar from "./Components/NavBar/NavBar";
+import Preview from "./Components/Preview/Preview";
 import ClobalStyle from "./Components/StyledComponents/GlobalStyle";
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <>
             <ClobalStyle />
             <NavBar activState={activState} items={items} />
+            <Preview />
         </>
     );
 };

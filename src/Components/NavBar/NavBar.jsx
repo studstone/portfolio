@@ -19,13 +19,13 @@ const NavBarWrapper = styled.div`
     align-items: center;
 `;
 
-const NavBar = activState => (
+const NavBar = ({ activState, items }) => (
     <>
         <NavbarStyled>
             <Container>
                 <NavBarWrapper>
                     <Logo />
-                    <Navigation {...activState} />
+                    <Navigation {...activState} items={items} />
                     <BurgerMenu {...activState} />
                 </NavBarWrapper>
             </Container>

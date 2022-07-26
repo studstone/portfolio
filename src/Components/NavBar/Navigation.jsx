@@ -79,28 +79,25 @@ const NavLink = styled.a`
     }
 `;
 
-const Navigation = ({ activeState, setActiveState }) => {
+const Navigation = ({ activeState, setActiveState, items }) => {
 
     const togleAtribute = () => {
-        setActiveState(prevState => !prevState);
+        if (window.innerWidth < 768) {
+            setActiveState(prevState => !prevState);
+        }
     };
 
     return (
         <>
             <NavWrapper visible={activeState}>
                 <NavList>
-                    <NavItem onClick={togleAtribute}>
-                        <NavLink href="#preview">Домашняя</NavLink>
-                    </NavItem>
-                    <NavItem onClick={togleAtribute}>
-                        <NavLink href="#about">Обо мне</NavLink>
-                    </NavItem>
-                    <NavItem onClick={togleAtribute}>
-                        <NavLink href="#work">Мои работы</NavLink>
-                    </NavItem>
-                    <NavItem onClick={togleAtribute}>
-                        <NavLink href="#footer">Контакты</NavLink>
-                    </NavItem>
+                    {
+                        items.map((item, index) =>
+                            <NavItem key={index} onClick={togleAtribute}>
+                                <NavLink href={item.href}>{item.value}</NavLink>
+                            </NavItem>
+                        )
+                    }
                 </NavList>
             </NavWrapper>
         </>

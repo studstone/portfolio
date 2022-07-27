@@ -3,19 +3,34 @@ import styled from 'styled-components';
 import { Container } from '../StyledComponents/Container';
 import { FlexWrapper } from '../StyledComponents/FlexWrapper';
 import UserImage from '../../image/men.webp';
+import device from '../StyledComponents/Breakpoint';
 
 const Section = styled.section`
     background: var(--background);
+    overflow: hidden;
 `;
 
 const PreviewFLex = styled(FlexWrapper)`
     flex-direction: column;
     color: var(--color-text);
     padding-top: 7.6rem;
+
+    @media ${device.laptop} {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 9.6rem;
+    }
+
+    @media ${device.laptop} {
+        padding-top: 12.6rem;
+    }
 `;
 
 const InformationFlex = styled.div`
-
+    @media ${device.laptop} {
+        width: 48%;
+    }
 `;
 
 const Title = styled.h1`
@@ -26,6 +41,38 @@ const Title = styled.h1`
         font-size: 2rem;
         font-weight: 600;
     }
+
+    @media ${device.tablet} {
+        font-size: 3.5rem;
+
+        & span {
+            font-size: 2rem;
+        }
+    }
+
+    @media ${device.laptop} {
+        font-size: 4.2rem;
+
+        & span {
+            font-size: 3.2rem;
+        }
+    }
+
+    @media ${device.laptopL} {
+        font-size: 5.8rem;
+
+        & span {
+            font-size: 4.8rem;
+        }
+    }
+
+    @media ${device.desktop} {
+        font-size: 7.2rem;
+
+        & span {
+            font-size: 6.2rem;
+        }
+    }
 `;
 
 const Text = styled.p`
@@ -33,6 +80,27 @@ const Text = styled.p`
     font-size: 1.2rem;
     line-height: 1.8rem;
 
+    @media ${device.tablet} {
+        width: 50%;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+    }
+
+    @media ${device.laptop} {
+        width: 100%;
+        font-size: 2rem;
+        line-height: 2.8rem;
+    }
+
+    @media ${device.laptopL} {
+        font-size: 2.6rem;
+        line-height: 3.6rem;
+    }
+
+    @media ${device.desktop} {
+        font-size: 3.2rem;
+        line-height: 4.2rem;
+    }
 `;
 
 const Button = styled.button`
@@ -44,22 +112,104 @@ const Button = styled.button`
     text-align: center;
     margin-top: 1rem;
     padding: 1rem 0;
-    background: var(--background-button);
-    box-shadow: 0rem 0.2rem 1.3rem rgba(226, 158, 0, 0.48);
+    background-color: var(--background-button);
+    box-shadow: var(--button-shadow);
     border-radius: 0.6rem;
+    
+    @media ${device.tablet} {
+        margin-top: 2.5rem;
+        width: 52%;
+        padding: 1.2rem 0;
+    }
+    
+    @media ${device.laptop} {
+        padding: 1.4rem 0;
+        transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        
+        :hover {
+            background-color: var(--button-hover);
+            box-shadow: var(--button-shadow-hover);
+        }
+    }
+
+    @media ${device.laptopL} {
+        font-size: 2.4rem;
+        padding: 2rem 0;
+    }
+
+    @media ${device.desktop} {
+        font-size: 3rem;
+        padding: 2.2rem 0;
+    }
 `;
 
 const SkillsFlex = styled.div`
     margin-top: 1.5rem;
     position: relative;
+
+    @media ${device.tablet} {
+        margin-top: 2.5rem;
+    }
+
+    @media ${device.laptop} {
+        margin-top: 0;
+        width: 48%;
+    }
 `;
 
 const Ellipsis = styled.div`
-    border: 40px solid var(--color-icon);
     width: 100%;
-    height: 300px;
+    height: 30rem;
     border-radius: 50%;
+    border: 40px solid var(--color-icon);
     filter: drop-shadow(0px 4px 70px rgba(0, 193, 236, 0.25));
+
+    @media ${device.mobileM} {
+        height: 35.5rem;
+    }
+
+    @media ${device.mobileL} {
+        height: 40.5rem;
+    }
+
+    @media ${device.tablet} {
+        height: 74.8rem;
+        border: 67px solid var(--color-icon);
+    }
+
+    @media ${device.laptop} {
+        height: 481px;
+        animation: rotate 10s infinite linear, animation-border 2s infinite linear;
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes animation-border {
+            0% {
+                border: 67px solid var(--color-icon);
+            }
+            50% {
+                border: 47px solid var(--color-icon);
+            }
+            100% {
+                border: 67px solid var(--color-icon);
+            }
+        }
+    }
+
+    @media ${device.laptopL} {
+        height: 681px;
+    }
+
+    @media ${device.desktop} {
+        height: 1220px;
+    }
 `;
 
 const Circle = styled.span`
@@ -75,21 +225,111 @@ const Circle = styled.span`
     border-radius: 50%;
     background: var(--background-circle);
     color: var(--color-icon);
+
+    @media ${device.tablet} {
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        font-size: 2.5rem;
+    }
+
+    @media ${device.laptop} {
+        animation: rotateCircle 10s infinite linear;
+
+        @keyframes rotateCircle {
+            0%{
+                transform: rotate(0deg);
+            }
+
+            100%{
+                transform: rotate(-360deg);
+            }
+        }
+    }
 `;
 
 const CircleHtml = styled(Circle)`
     top: -36px;
     left: 0;
+    @media ${device.mobileM} {
+        top: -24px;
+    }
+
+    @media ${device.mobileL} {
+        top: -11px;
+    }
+
+    @media ${device.tablet} {
+        top: 10px;
+    }
+
+    @media ${device.laptop} {
+        top: -50px;
+    }
+
+    @media ${device.laptopL} {
+        top: -3px;
+    }
+
+    @media ${device.desktop} {
+        top: 158px;
+    }
 `;
 
 const CircleJs = styled(Circle)`
     top: 2px;
     right: -39px;
+    @media ${device.mobileM} {
+        top: 22px;
+    }
+
+    @media ${device.mobileL} {
+        top: 42px;
+    }
+
+    @media ${device.tablet} {
+        top: 56px;
+    }
+
+    @media ${device.laptop} {
+        top: -15px;
+    }
+
+    @media ${device.laptopL} {
+        top: 41px;
+    }
+
+    @media ${device.desktop} {
+        top: 228px;
+    }
 `;
 
 const CircleCss = styled(Circle)`
     bottom: -18px;
     left: -22px;
+    @media ${device.mobileM} {
+        bottom: -2px;
+    }
+
+    @media ${device.mobileL} {
+        bottom: 13px;
+    }
+
+    @media ${device.tablet} {
+        bottom: 30px;
+    }
+
+    @media ${device.laptop} {
+        bottom: -34px;
+    }
+
+    @media ${device.laptopL} {
+        bottom: 18px;
+    }
+
+    @media ${device.desktop} {
+        bottom: 190px;
+    }
 `;
 
 const User = styled.img`
@@ -111,7 +351,7 @@ const Preview = () => (
                         <span>Привет,</span> Я Николай Тимофеев
                     </Title>
                     <Text>
-                        Занимаюсь фронтенд разработкой уже год. Вам&nbsp;нужен сайта? Тогда
+                        Занимаюсь фронтенд разработкой уже год.<br /> Вам&nbsp;нужен сайт? Тогда
                         свяжитесь со мной.
                     </Text>
                     <Button>Связаться</Button>

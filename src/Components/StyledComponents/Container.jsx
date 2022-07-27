@@ -26,6 +26,6 @@ export const Container = styled.div`
     }
 
     @media ${device.desktop} {
-        max-width: 254.0rem;
+        max-width: 250.0rem;
     }
 `;

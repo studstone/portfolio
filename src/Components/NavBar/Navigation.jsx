@@ -18,6 +18,7 @@ const NavWrapper = styled.nav`
         top: auto;
         right: auto;
         transform: translateX(0);
+        background: transparent;
     }
 
     @media ${device.laptop} {
@@ -53,10 +54,7 @@ const NavItem = styled.li`
     }
 
     @media ${device.laptop} {
-        transition: border-bottom 0.3s ease;
-        :hover {
-            border-bottom: 1px solid var(--color-border);
-        }
+        height: 4rem;
     }
 `;
 
@@ -72,6 +70,10 @@ const NavLink = styled.a`
 
     @media ${device.laptop} {
         font-size: 2.4rem;
+        transition: border-bottom 0.3s ease;
+        :hover {
+            border-bottom: 1px solid var(--color-border);
+        }
     }
 
     @media ${device.laptopL} {
@@ -119,7 +121,10 @@ const Navigation = ({ activeState, setActiveState, items }) => {
             </NavWrapper>
             {
                 window.innerWidth < 768 ?
-                    <Blur ref={box} visible={activeState} onClick={togleAtribute} /> :
+                    <Blur
+                        ref={box}
+                        visible={activeState}
+                        onClick={togleAtribute} /> :
                     ''
             }
         </>

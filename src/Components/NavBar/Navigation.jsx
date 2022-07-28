@@ -12,8 +12,6 @@ const NavWrapper = styled.nav`
     bottom: 0;
     background: var(--background);
     z-index: 999;
-    /* transform: ${props => (props.visible ? 'translateX(0)' : 'translateX(100%)')};
-    transition: transform 0.5s ease-in-out; */
 
     @media ${device.tablet} {
         position: relative;
@@ -89,16 +87,13 @@ const Blur = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    /* background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(2px); */
-
 `;
 
 const Navigation = ({ activeState, setActiveState, items }) => {
     const box = useRef(null);
 
     const togleAtribute = () => {
-        if (window.innerWidth < 768 || box.curent) {
+        if (window.innerWidth < 768 || box.current) {
             setActiveState(prevState => !prevState);
         }
     };

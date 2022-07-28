@@ -60,6 +60,7 @@ const NavItem = styled.li`
 
 const NavLink = styled.a`
     display: block;
+    position: relative;
     text-align: center;
     font-size: 2rem;
     padding: 0 0 0.5rem 0;
@@ -70,12 +71,27 @@ const NavLink = styled.a`
 
     @media ${device.laptop} {
         font-size: 2.4rem;
-        transition: border-bottom 0.3s ease;
-        :hover {
-            border-bottom: 1px solid var(--color-border);
+
+        &:after {
+            position: absolute;
+            content:"";
+            width: 0;
+            height: 2px;
+            background: var(--background-button);
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin-top: 0.1rem;
+            transition: width 0.5s ease-in-out;   
+        } 
+
+        &:hover {
+
+            &:after {
+            width: 100%; 
+            }
         }
     }
-
     @media ${device.laptopL} {
         font-size: 3.2rem;
     }

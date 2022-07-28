@@ -1,0 +1,46 @@
+.blur-enter-active {
+  animation: opacity 0.5s forwards;
+}
+
+.blur-enter-done {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.blur-exit-active {
+  animation: opacity 0.5s reverse;
+}
+
+.menu-enter-active {
+  animation: transform 0.5s forwards;
+}
+
+.menu-enter-done {
+  transform: translateX(0);
+}
+
+.menu-exit-active {
+  animation: transform 0.5s reverse;
+}
+
+@keyframes opacity {
+  0% {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(0);
+  }
+
+  100% {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+  }
+}
+
+@keyframes transform {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

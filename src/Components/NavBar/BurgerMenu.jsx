@@ -20,14 +20,14 @@ const ButtonBurger = styled.button`
 
     }
     &::before {
-        top: ${props => (props.visible ? '0' : '50%')};
-        transform: ${props => (props.visible ? 'rotate(0deg)' : 'rotate(45deg)')};
+        top: ${props => (props.visible ? '50%' : '0')};
+        transform: ${props => (props.visible ? 'rotate(45deg)' : 'rotate(0deg)')};
 
     }
     &::after{
-        top: ${props => (props.visible ? 'auto' : '50%')};
-        bottom: ${props => (props.visible ? '0' : 'auto')};
-        transform: ${props => (props.visible ? 'rotate(0deg)' : 'rotate(-45deg)')};
+        top: ${props => (props.visible ? '50%' : 'auto')};
+        bottom: ${props => (props.visible ? 'auto' : '0')};
+        transform: ${props => (props.visible ? 'rotate(-45deg)' : 'rotate(0deg)')};
     }
 `;
 const BurgerLine = styled.span`
@@ -38,7 +38,7 @@ const BurgerLine = styled.span`
     height: 0.2rem;
     background-color: white;
     transform: translateY(-50%);
-    opacity: ${props => (props.visible ? '1' : '0')};
+    opacity: ${props => (props.visible ? '0' : '1')};
     transition: opacity 0.3s ease-in-out;
 `;
 

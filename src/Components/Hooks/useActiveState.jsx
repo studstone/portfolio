@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const useActiveState = () => {
 
-    const [activeState, setActiveState] = useState(true);
+    const [activeState, setActiveState] = useState(false);
 
     return { activeState, setActiveState };
 };

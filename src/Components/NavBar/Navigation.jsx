@@ -1,4 +1,6 @@
 import React, { useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
+import '../../style/mobile-menu.css';
 import styled from 'styled-components';
 import device from '../StyledComponents/Breakpoint';
 
@@ -10,8 +12,8 @@ const NavWrapper = styled.nav`
     bottom: 0;
     background: var(--background);
     z-index: 999;
-    transform: ${props => (props.visible ? 'translateX(100%)' : 'translateX(0)')};
-    transition: transform 0.5s ease-in-out;
+    /* transform: ${props => (props.visible ? 'translateX(0)' : 'translateX(100%)')};
+    transition: transform 0.5s ease-in-out; */
 
     @media ${device.tablet} {
         position: relative;
@@ -87,10 +89,8 @@ const Blur = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(2px);
-    transition: transform 0.5s ease-in-out;
-    transform: ${props => (props.visible ? 'translateX(-100%)' : 'translateX(0)')};
+    /* background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px); */
 
 `;
 
@@ -105,28 +105,49 @@ const Navigation = ({ activeState, setActiveState, items }) => {
 
     return (
         <>
-            <NavWrapper visible={activeState}>
-                {
-                    !activeState || window.innerWidth >= 768 ?
-                        <NavList>
-                            {
-                                items.map((item, index) =>
-                                    <NavItem key={index} onClick={togleAtribute}>
-                                        <NavLink href={item.href}>{item.value}</NavLink>
-                                    </NavItem>
-                                )
-                            }
-                        </NavList> : ''
-                }
-            </NavWrapper>
-            {
-                window.innerWidth < 768 ?
-                    <Blur
-                        ref={box}
-                        visible={activeState}
-                        onClick={togleAtribute} /> :
-                    ''
+            <CSSTransition
+                in={activeState}
+                timeout={500}
+                classNames='menu'
+                mountOnEnter
+                unmountOnExit
+            >
+                <NavWrapper>
+                    <NavList>
+                        {
+                            items.map((item, index) =>
+                                <NavItem key={index} onClick={togleAtribute}>
+                                    <NavLink href={item.href}>{item.value}</NavLink>
+                                </NavItem>
+                            )
+                        }
+                    </NavList>
+                </NavWrapper>
+            </CSSTransition>
+            {window.innerWidth >= 768 &&
+                <NavWrapper>
+                    <NavList>
+                        {
+                            items.map((item, index) =>
+                                <NavItem key={index} onClick={togleAtribute}>
+                                    <NavLink href={item.href}>{item.value}</NavLink>
+                                </NavItem>
+                            )
+                        }
+                    </NavList>
+                </NavWrapper>
             }
+            <CSSTransition
+                in={activeState}
+                timeout={500}
+                classNames='blur'
+                mountOnEnter
+                unmountOnExit
+            >
+                <Blur
+                    ref={box}
+                    onClick={togleAtribute} />
+            </CSSTransition>
         </>
     );
 };

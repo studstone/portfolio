@@ -1,4 +1,5 @@
 import React from "react";
+import About from "./Components/About/About";
 import useActiveState from "./Components/Hooks/useActiveState";
 import NavBar from "./Components/NavBar/NavBar";
 import Preview from "./Components/Preview/Preview";
@@ -17,6 +18,7 @@ const App = () => {
             <NavBar activState={activState} items={items} />
             <Preview />
             <Skills skills={skills} />
+            <About />
         </>
     );
 };

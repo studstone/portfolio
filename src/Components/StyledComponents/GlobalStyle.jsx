@@ -19,7 +19,6 @@ const ClobalStyle = createGlobalStyle`
     font-weight: 400;
     color: var(--color-text);
     overflow-x: hidden;
-    min-height: 2000px;
   }
 
   img {
@@ -71,7 +70,10 @@ input::-webkit-inner-spin-button {
 }
 
 :root {
-  --background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);;
+  --background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
+  --background-wrapper: #2a2a2a;
+  --shadow-wrapper: 0px 4px 6px rgb(0 0 0 / 47%);
+  --shadow-image: 0px 0px 0px 6px #686868;
   --color-icon: #00c4f0;
   --background-button: #E2A300;
   --button-hover: rgb(255, 230, 0);

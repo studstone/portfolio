@@ -80,25 +80,21 @@ const Item = styled.li`
     }
 `;
 
-const Skills = ({ skills }) => {
-    console.dir(SectionSkills);
-
-    return (
-        <SectionSkills>
-            <Container>
-                <SkillsList>
-                    {
-                        skills.map((skill, index) =>
-                            <Item key={index}>
-                                <img src={skill.src} alt={skill.alt} />
-                                <span>{skill.value}</span>
-                            </Item>
-                        )
-                    }
-                </SkillsList>
-            </Container>
-        </SectionSkills>
-    );
-};
+const Skills = ({ skills }) => (
+    <SectionSkills>
+        <Container>
+            <SkillsList>
+                {
+                    skills.map((skill, index) =>
+                        <Item key={index}>
+                            <img src={skill.src} alt={skill.alt} />
+                            <span>{skill.value}</span>
+                        </Item>
+                    )
+                }
+            </SkillsList>
+        </Container>
+    </SectionSkills>
+);
 
 export default Skills;

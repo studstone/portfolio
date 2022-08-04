@@ -7,9 +7,14 @@ export const SectionAbout = styled.section`
     background: linear-gradient(130.68deg, #414141 0%, #2d2d2d 100.52%);
     color: var(--color-text);
     font-size: 2rem;
+    overflow: hidden;
 
     @media ${device.laptop} {
             padding-bottom: 85rem
+    }
+
+    @media ${device.laptopL} {
+            padding-bottom: 90rem
     }
 `;
 export const Wrapper = styled.div`
@@ -46,9 +51,14 @@ export const CircleWhite = styled.div`
         filter: drop-shadow(0px 4px 70px rgba(255, 255, 255, 0.25));
     }
 
-    @media ${device.tablet} {
+    @media ${device.laptop} {
         width: 60rem;
         height: 60rem;
+    }
+
+    @media ${device.laptopL} {
+        width: 80rem;
+        height: 80rem;
     }
 `;
 
@@ -64,9 +74,16 @@ export const CircleBlue = styled.div`
         filter: drop-shadow(0px 4px 70px rgba(0, 193, 236, 0.25));
     }
 
-    @media ${device.tablet} {
+    @media ${device.laptop} {
         width: 50rem;
         height: 50rem;
+    }
+
+    @media ${device.laptopL} {
+        width: 40rem;
+        height: 40rem;
+        top: 50rem;
+        right: 22rem;
     }
 `;
 
@@ -82,11 +99,17 @@ export const CircleYellow = styled.div`
         filter: drop-shadow(0px 4px 70px rgba(226, 162, 0, 0.25));
     }
 
-    @media ${device.tablet} {
+    @media ${device.laptop} {
         top: 0;
         right: 3.3rem;
         width: 40rem;
         height: 40rem;
+    }
+
+    @media ${device.laptopL} {
+        right: 6rem;
+        width: 50rem;
+        height: 50rem;
     }
 `;
 
@@ -118,15 +141,24 @@ export const ImageWrapperFirst = styled(ImageWrapper)`
         width: 30rem;
         height: 40rem;
     }
+
+    @media ${device.laptopL} {
+        left: 16rem;
+    }
 `;
 
 export const ImageWrapperSecond = styled(ImageWrapper)`
     @media ${device.tablet} {
-            position: absolute;
-            top: 52rem;
-            left: 0;
-            width: 30rem;
-            height: 30rem;
+        position: absolute;
+        top: 52rem;
+        left: 0;
+        width: 30rem;
+        height: 30rem;
+    }
+
+    @media ${device.tablet} {
+        top: 56rem;
+        left: 8rem;
     }
 `;
 
@@ -137,6 +169,10 @@ export const ImageWrapperThird = styled(ImageWrapper)`
             right: 0;
             width: 30rem;
             height: 50rem;
+    }
+
+    @media ${device.tablet} {
+            right: 10rem;
     }
 `;
 
@@ -161,6 +197,11 @@ export const TextWrapper = styled.div`
             transform: translateX(-50%) translateY(15%);
             width: 38rem;
     }
+
+    @media ${device.laptopL} {
+            transform: translateX(-46%) translateY(0%);
+            width: 47rem;
+    }
 `;
 
 export const AboutText = styled.p`
@@ -168,4 +209,8 @@ export const AboutText = styled.p`
     padding: 1rem;
     width: 100%;
     height: 100%;
+
+    @media ${device.laptopL} {
+        font-size: 3rem;
+    }
 `;

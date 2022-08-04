@@ -20,7 +20,7 @@ const TextAnimation = {
     visible: custom => ({
         x: 0,
         opacity: 1,
-        transition: { delay: custom * 0.2, once: true }
+        transition: { delay: custom * 0.3 }
     })
 };
 
@@ -28,6 +28,7 @@ const Preview = () => (
     <MSection
         initial='hidden'
         whileInView='visible'
+        viewport={{ once: true }}
     >
         <Container>
             <PreviewFLex>

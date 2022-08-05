@@ -2,8 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../StyledComponents/Container';
 import { Item, SectionSkills, SkillsList } from './StyledComponent';
-import { useRef } from "react";
-import { useState } from 'react';
 
 const MSectionSkills = motion(SectionSkills);
 const MSkillsList = motion(SkillsList);
@@ -21,34 +19,29 @@ const SkillsAnimation = {
     })
 };
 
-const Skills = ({ skills }) => {
-    const test = useRef(null);
-
-    return (
-        <MSectionSkills ref={test}>
-            {console.dir(test.current)}
-            <Container>
-                <MSkillsList
-                    initial='hidden'
-                    whileInView='visible'
-                    viewport={{ amount: 0.2, once: true }}
-                >
-                    {
-                        skills.map((skill, index) =>
-                            <MItem
-                                key={index}
-                                variants={SkillsAnimation}
-                                custom={index + 1}
-                            >
-                                <img src={skill.src} alt={skill.alt} />
-                                <span>{skill.value}</span>
-                            </MItem>
-                        )
-                    }
-                </MSkillsList>
-            </Container>
-        </MSectionSkills >
-    );
-};
+const Skills = ({ skills }) => (
+    <MSectionSkills>
+        <Container>
+            <MSkillsList
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ amount: 0.2, once: true }}
+            >
+                {
+                    skills.map((skill, index) =>
+                        <MItem
+                            key={index}
+                            variants={SkillsAnimation}
+                            custom={index + 1}
+                        >
+                            <img src={skill.src} alt={skill.alt} />
+                            <span>{skill.value}</span>
+                        </MItem>
+                    )
+                }
+            </MSkillsList>
+        </Container>
+    </MSectionSkills >
+);
 
 export default Skills;

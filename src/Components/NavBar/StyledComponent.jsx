@@ -99,12 +99,14 @@ export const LogoTitle = styled.h1`
 
 export const NavbarStyled = styled.header`
     position: fixed;
-    top: 0;
+    top: ${props => (props.visible ? "0" : "-10rem")};
     left: 0;
     right: 0;
     padding: 1.3rem 0;
     background: var(--background);
     z-index: 999;
+    opacity: ${props => (props.visible ? "1" : "0")};;
+    transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
 `;
 
 export const NavBarWrapper = styled(FlexWrapper)`

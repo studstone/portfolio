@@ -4,10 +4,9 @@ import device from '../StyledComponents/Breakpoint';
 
 export const SectionAbout = styled.section`
     padding: 4rem 0;
-    background: linear-gradient(130.68deg, #414141 0%, #2d2d2d 100.52%);
     color: var(--color-text);
     font-size: 2rem;
-    overflow: hidden;
+    overflow-x: hidden;
 
     @media ${device.laptop} {
             padding-bottom: 85rem
@@ -48,7 +47,7 @@ export const CircleWhite = styled.div`
         height: 50rem;
         border: 6rem solid #E4E4E4;
         border-radius: 50%;
-        filter: drop-shadow(0px 4px 70px rgba(255, 255, 255, 0.25));
+        filter: drop-shadow(0px 4px 30px rgba(255, 255, 255, 0.25));
     }
 
     @media ${device.laptop} {
@@ -71,7 +70,7 @@ export const CircleBlue = styled.div`
         height: 40rem;
         border-radius: 50%;
         border: 55px solid #00C4F0;
-        filter: drop-shadow(0px 4px 70px rgba(0, 193, 236, 0.25));
+        filter: drop-shadow(0px 4px 30px rgba(0, 193, 236, 0.25));
     }
 
     @media ${device.laptop} {
@@ -96,7 +95,7 @@ export const CircleYellow = styled.div`
         height: 30rem;
         border-radius: 50%;
         border: 34px solid #E2A200;
-        filter: drop-shadow(0px 4px 70px rgba(226, 162, 0, 0.25));
+        filter: drop-shadow(0px 4px 30px rgba(226, 162, 0, 0.25));
     }
 
     @media ${device.laptop} {
@@ -156,7 +155,7 @@ export const ImageWrapperSecond = styled(ImageWrapper)`
         height: 30rem;
     }
 
-    @media ${device.tablet} {
+    @media ${device.laptopL} {
         top: 56rem;
         left: 8rem;
     }
@@ -171,7 +170,7 @@ export const ImageWrapperThird = styled(ImageWrapper)`
             height: 50rem;
     }
 
-    @media ${device.tablet} {
+    @media ${device.laptopL} {
             right: 10rem;
     }
 `;

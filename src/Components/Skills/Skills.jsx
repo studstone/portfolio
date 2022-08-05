@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../StyledComponents/Container';
 import { Item, SectionSkills, SkillsList } from './StyledComponent';
+import { useRef } from "react";
 import { useState } from 'react';
 
 const MSectionSkills = motion(SectionSkills);
@@ -21,19 +22,11 @@ const SkillsAnimation = {
 };
 
 const Skills = ({ skills }) => {
-    const [test, setTest] = useState(false);
-
-    const hedlerAnimation = () => {
-        if (window.innerWidth >= 768) {
-            setTest(true);
-        } else {
-            setTest(false);
-        }
-    };
-
+    const test = useRef(null);
 
     return (
-        <MSectionSkills>
+        <MSectionSkills ref={test}>
+            {console.dir(test.current)}
             <Container>
                 <MSkillsList
                     initial='hidden'

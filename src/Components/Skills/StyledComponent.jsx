@@ -3,7 +3,6 @@ import device from '../StyledComponents/Breakpoint';
 
 export const SectionSkills = styled.section`
     padding: 4rem 0;
-    background: linear-gradient(130.68deg, #414141 0%, #2d2d2d 100.52%);
     color: var(--color-text);
     font-size: 2rem;
 `;

@@ -14,7 +14,7 @@ const ClobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    background-color: #ffffff;
+    background: linear-gradient(130.68deg, #414141 0%, #2d2d2d 100.52%);
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: var(--color-text);

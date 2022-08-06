@@ -26,6 +26,7 @@ const TextAnimation = {
 
 const Preview = () => (
     <MSection
+        id='preview'
         initial='hidden'
         whileInView='visible'
         viewport={{ once: true }}

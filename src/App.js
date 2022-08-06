@@ -1,5 +1,6 @@
 import React from "react";
 import About from "./Components/About/About";
+import ButtonUp from "./Components/ButtonUp/ButtonUp";
 import useActiveState from "./Components/Hooks/useActiveState";
 import NavBar from "./Components/NavBar/NavBar";
 import Preview from "./Components/Preview/Preview";
@@ -8,8 +9,6 @@ import ClobalStyle from "./Components/StyledComponents/GlobalStyle";
 import { items, skills } from "./DB/DBItems";
 
 const App = () => {
-
-
     const activState = useActiveState();
 
     return (
@@ -19,6 +18,7 @@ const App = () => {
             <Preview />
             <Skills skills={skills} />
             <About />
+            <ButtonUp />
         </>
     );
 };

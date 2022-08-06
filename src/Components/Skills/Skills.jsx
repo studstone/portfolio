@@ -19,7 +19,7 @@ const SkillsAnimation = {
     })
 };
 
-const Skills = ({ skills }) => (
+const Skills = ({ skills, test }) => (
     <MSectionSkills>
         <Container>
             <MSkillsList
@@ -41,6 +41,7 @@ const Skills = ({ skills }) => (
                 }
             </MSkillsList>
         </Container>
+        { }
     </MSectionSkills >
 );
 

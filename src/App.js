@@ -6,7 +6,8 @@ import NavBar from "./Components/NavBar/NavBar";
 import Preview from "./Components/Preview/Preview";
 import Skills from "./Components/Skills/Skills";
 import ClobalStyle from "./Components/StyledComponents/GlobalStyle";
-import { items, skills } from "./DB/DBItems";
+import MyWork from "./Components/Work/MyWork";
+import { items, skills, slides } from "./DB/DBItems";
 
 const App = () => {
     const activState = useActiveState();
@@ -18,6 +19,7 @@ const App = () => {
             <Preview />
             <Skills skills={skills} />
             <About />
+            <MyWork slides={slides} />
             <ButtonUp />
         </>
     );

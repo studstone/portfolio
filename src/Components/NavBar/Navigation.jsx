@@ -16,7 +16,7 @@ const Navigation = ({ activeState, setActiveState, items }) => {
         <>
             <CSSTransition
                 in={activeState}
-                timeout={500}
+                timeout={400}
                 classNames='menu'
                 mountOnEnter
                 unmountOnExit
@@ -48,7 +48,7 @@ const Navigation = ({ activeState, setActiveState, items }) => {
             }
             <CSSTransition
                 in={activeState}
-                timeout={500}
+                timeout={400}
                 classNames='blur'
                 mountOnEnter
                 unmountOnExit

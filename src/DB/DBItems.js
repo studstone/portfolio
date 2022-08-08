@@ -80,3 +80,33 @@ export const slides = [
     }
 ];
 
+export const contacts = [
+    {
+        name: 'Email:',
+        link: 'nikolas2996@gmail.com',
+        href: 'mailto:nikolas2996@gmail.com',
+        src: './image/gmail-icon.svg',
+        alt: 'Icon'
+    },
+    {
+        name: 'Телефон:',
+        link: '+7(999)-222-01-34',
+        href: 'tel:+79992220134',
+        src: './image/telephone-icon.svg',
+        alt: 'Icon'
+    },
+    {
+        name: 'Telegram:',
+        link: 'no_pasaran',
+        href: 'https://t.me/no_passran',
+        src: './image/telegram-icon.svg',
+        alt: 'Icon'
+    },
+    {
+        name: 'Вконтакте:',
+        link: 'Николай Тимофеев',
+        href: 'https://vk.com/i.voynash',
+        src: './image/vk-icon.svg',
+        alt: 'Icon'
+    }
+];

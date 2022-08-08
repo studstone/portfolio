@@ -1,5 +1,5 @@
 .blur-enter-active {
-  animation: opacity 0.5s forwards;
+  animation: opacity 0.4s forwards;
 }
 
 .blur-enter-done {
@@ -8,11 +8,11 @@
 }
 
 .blur-exit-active {
-  animation: opacity 0.5s reverse;
+  animation: opacity 0.4s reverse;
 }
 
 .menu-enter-active {
-  animation: transform 0.5s forwards;
+  animation: transform 0.4s forwards;
 }
 
 .menu-enter-done {
@@ -20,7 +20,7 @@
 }
 
 .menu-exit-active {
-  animation: transform 0.5s reverse;
+  animation: transform 0.4s reverse;
 }
 
 .button-up-enter-active {

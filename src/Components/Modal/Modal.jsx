@@ -17,7 +17,7 @@ const Modal = ({ openModal, setOpenModal, inputs }) => {
                 mountOnEnter
                 unmountOnExit
             >
-                <ModalBlur />
+                <ModalBlur onClick={closeModal} />
             </CSSTransition>
             <CSSTransition
                 in={openModal}

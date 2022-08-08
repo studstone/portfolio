@@ -12,7 +12,7 @@
 }
 
 .menu-enter-active {
-  animation: transform 0.4s forwards;
+  animation: transform 0.5s forwards;
 }
 
 .menu-enter-done {
@@ -20,11 +20,11 @@
 }
 
 .menu-exit-active {
-  animation: transform 0.4s reverse;
+  animation: transform 0.5s reverse;
 }
 
 .button-up-enter-active {
-  animation: button 0.3s forwards;
+  animation: button 0.4s forwards;
 }
 
 .button-up-enter-done {
@@ -32,11 +32,11 @@
 }
 
 .button-up-exit-active {
-  animation: button 0.3s reverse;
+  animation: button 0.4s reverse;
 }
 
 .modal-enter-active {
-  animation: modal 0.4s forwards;
+  animation: modal 0.5s forwards;
 }
 
 .modal-enter-done {
@@ -44,7 +44,7 @@
 }
 
 .modal-exit-active {
-  animation: modal 0.4s reverse;
+  animation: modal 0.5s reverse;
 }
 
 @keyframes opacity {

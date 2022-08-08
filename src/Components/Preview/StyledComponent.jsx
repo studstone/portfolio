@@ -113,6 +113,7 @@ export const Button = styled.button`
     background-color: var(--background-button);
     box-shadow: var(--button-shadow);
     border-radius: 0.6rem;
+    color: black;
     
     @media ${device.tablet} {
         margin-top: 2.5rem;
@@ -156,11 +157,13 @@ export const SkillsFlex = styled.div`
 `;
 
 export const Ellipsis = styled.div`
+    position: relative;
     width: 100%;
     height: 30rem;
     border-radius: 50%;
     border: 40px solid var(--color-icon);
     filter: drop-shadow(0px 4px 70px rgba(0, 193, 236, 0.25));
+
 
     @media ${device.mobileM} {
         height: 35.5rem;

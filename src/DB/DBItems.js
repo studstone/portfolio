@@ -110,3 +110,22 @@ export const contacts = [
         alt: 'Icon'
     }
 ];
+
+
+export const inputs = [
+    {
+        name: 'name',
+        type: 'text',
+        placeholder: 'Имя Фамилия'
+    },
+    {
+        name: 'email',
+        type: 'email',
+        placeholder: 'Email'
+    },
+    {
+        name: 'phone',
+        type: 'tel',
+        placeholder: 'Ваш телефон'
+    },
+];

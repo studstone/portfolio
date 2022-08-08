@@ -24,49 +24,58 @@ const TextAnimation = {
     })
 };
 
-const Preview = () => (
-    <MSection
-        id='preview'
-        initial='hidden'
-        whileInView='visible'
-        viewport={{ once: true }}
-    >
-        <Container>
-            <PreviewFLex>
-                <InformationFlex>
-                    <MTitle
-                        variants={TextAnimation}
-                        custom={1}
-                    >
-                        <span>Привет,</span> Я Николай Тимофеев
-                    </MTitle>
-                    <MText
-                        variants={TextAnimation}
-                        custom={2}
-                    >
-                        Занимаюсь фронтенд разработкой уже год.<br /> Вам&nbsp;нужен сайт? Тогда
-                        свяжитесь со мной.
-                    </MText>
-                    <MButton
-                        variants={TextAnimation}
-                        custom={3}
-                    >
-                        Связаться
-                    </MButton>
-                </InformationFlex>
-                <SkillsFlex>
-                    <Ellipsis>
-                        <CircleCss>CSS</CircleCss>
-                        <CircleJs>JS</CircleJs>
-                        <CircleHtml>HTML</CircleHtml>
-                    </Ellipsis>
-                    <User
-                        src={UserImage}
-                    />
-                </SkillsFlex>
-            </PreviewFLex>
-        </Container>
-    </MSection>
-);
+const Preview = ({ setOpenModal }) => {
+
+    const hendlerOpenModal = () => {
+        setOpenModal(prev => !prev);
+        document.body.style.overflow = 'hidden';
+    };
+
+    return (
+        <MSection
+            id='preview'
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: true }}
+        >
+            <Container>
+                <PreviewFLex>
+                    <InformationFlex>
+                        <MTitle
+                            variants={TextAnimation}
+                            custom={1}
+                        >
+                            <span>Привет,</span> Я Николай Тимофеев
+                        </MTitle>
+                        <MText
+                            variants={TextAnimation}
+                            custom={2}
+                        >
+                            Занимаюсь фронтенд разработкой уже год.<br /> Вам&nbsp;нужен сайт? Тогда
+                            свяжитесь со мной.
+                        </MText>
+                        <MButton
+                            variants={TextAnimation}
+                            custom={3}
+                            onClick={hendlerOpenModal}
+                        >
+                            Связаться
+                        </MButton>
+                    </InformationFlex>
+                    <SkillsFlex>
+                        <Ellipsis>
+                            <CircleCss>CSS</CircleCss>
+                            <CircleJs>JS</CircleJs>
+                            <CircleHtml>HTML</CircleHtml>
+                        </Ellipsis>
+                        <User
+                            src={UserImage}
+                        />
+                    </SkillsFlex>
+                </PreviewFLex>
+            </Container>
+        </MSection>
+    );
+};
 
 export default Preview;

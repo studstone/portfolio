@@ -35,6 +35,18 @@
   animation: button 0.3s reverse;
 }
 
+.modal-enter-active {
+  animation: modal 0.4s forwards;
+}
+
+.modal-enter-done {
+  opacity: 1;
+}
+
+.modal-exit-active {
+  animation: modal 0.4s reverse;
+}
+
 @keyframes opacity {
   0% {
     background: rgba(255, 255, 255, 0);
@@ -68,5 +80,17 @@
     right: 2rem;
     opacity: 1;
     transform: rotate(-90deg) scale(1);
+  }
+}
+
+@keyframes modal {
+  0% {
+    opacity: 0;
+    top: 0;
+  }
+
+  100% {
+    opacity: 1;
+    top: 50%;
   }
 }

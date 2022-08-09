@@ -12,6 +12,17 @@ const Navigation = ({ activeState, setActiveState, items }) => {
         }
     };
 
+    const scroll = e => {
+        e.preventDefault();
+
+        const section = document.querySelector(e.target.hash);
+
+        section.scrollIntoView({
+            block: "start",
+            behavior: "smooth"
+        });
+    };
+
     return (
         <>
             <CSSTransition
@@ -26,7 +37,12 @@ const Navigation = ({ activeState, setActiveState, items }) => {
                         {
                             items.map((item, index) =>
                                 <NavItem key={index} onClick={togleAtribute}>
-                                    <NavLink href={item.href}>{item.value}</NavLink>
+                                    <NavLink
+                                        href={item.href}
+                                        onClick={scroll}
+                                    >
+                                        {item.value}
+                                    </NavLink>
                                 </NavItem>
                             )
                         }
@@ -39,7 +55,12 @@ const Navigation = ({ activeState, setActiveState, items }) => {
                         {
                             items.map((item, index) =>
                                 <NavItem key={index} onClick={togleAtribute}>
-                                    <NavLink href={item.href}>{item.value}</NavLink>
+                                    <NavLink
+                                        onClick={scroll}
+                                        href={item.href}
+                                    >
+                                        {item.value}
+                                    </NavLink>
                                 </NavItem>
                             )
                         }

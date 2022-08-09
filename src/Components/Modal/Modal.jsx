@@ -18,8 +18,6 @@ const Modal = ({ openModal, setOpenModal }) => {
         mode: 'onBlur'
     });
 
-    console.log(!isValid);
-
     const closeModal = () => {
         setOpenModal(false);
         document.body.removeAttribute('style');

@@ -23,6 +23,7 @@ const Modal = ({ openModal, setOpenModal }) => {
     const closeModal = () => {
         setOpenModal(false);
         document.body.removeAttribute('style');
+        reset();
     };
 
     const onSubmit = data => {
@@ -60,6 +61,7 @@ const Modal = ({ openModal, setOpenModal }) => {
                             })}
                             type='text'
                             placeholder='Ваше Имя'
+                            label='Ваше Имя'
                         />
                         {
                             errors?.name &&

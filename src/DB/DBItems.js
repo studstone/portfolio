@@ -69,7 +69,7 @@ export const slides = [
     },
     {
         title: 'Лендинг',
-        description: 'Сайт-портфолио учителя по химии. Верстка выполнена по БЭМ. Верстка выполнена по' +
+        description: 'Сайт-портфолио учителя по химии. Верстка выполнена по ' +
             'БЭМ. Весь интерактив написан на нативном JS. При разработке' +
             'использовался сборщик проектов Webpack. Вся анимация' +
             'написана на JS. Форма отправки настроена на телеграм бота.',
@@ -109,23 +109,4 @@ export const contacts = [
         src: './image/vk-icon.svg',
         alt: 'Icon'
     }
-];
-
-
-export const inputs = [
-    {
-        name: 'name',
-        type: 'text',
-        placeholder: 'Имя Фамилия'
-    },
-    {
-        name: 'email',
-        type: 'email',
-        placeholder: 'Email'
-    },
-    {
-        name: 'phone',
-        type: 'tel',
-        placeholder: 'Ваш телефон'
-    },
 ];

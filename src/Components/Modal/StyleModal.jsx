@@ -36,6 +36,11 @@ export const ModalWrapper = styled.div`
 export const ModalForm = styled.form`
     width: 100%;
     height: 100%;
+
+    span{
+        color: #ff4444;
+        font-size: 1.2rem;
+    }
 `;
 
 export const ModalInput = styled.input`
@@ -46,6 +51,7 @@ export const ModalInput = styled.input`
     outline: none;
     border-radius: 0.6rem;
     margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
     font-size: 1.4rem;
     color: black;
     :first-child{
@@ -64,8 +70,15 @@ export const ModalInput = styled.input`
 export const ModalButton = styled(Button)`
     margin-top: 2rem;
 
+    
+
     @media ${device.tablet} {
         width: 100%;
+    }
+
+    :disabled {
+        background-color: #cea746;
+        color: #0000005a;
     }
 `;
 

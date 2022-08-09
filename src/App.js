@@ -10,7 +10,7 @@ import Preview from "./Components/Preview/Preview";
 import Skills from "./Components/Skills/Skills";
 import ClobalStyle from "./Components/StyledComponents/GlobalStyle";
 import MyWork from "./Components/Work/MyWork";
-import { contacts, inputs, items, skills, slides } from "./DB/DBItems";
+import { contacts, items, skills, slides } from "./DB/DBItems";
 
 const App = () => {
     const activState = useActiveState();
@@ -25,7 +25,7 @@ const App = () => {
             <About />
             <MyWork slides={slides} />
             <Footer contacts={contacts} />
-            <Modal {...toggleModal} inputs={inputs} />
+            <Modal {...toggleModal} />
             <ButtonUp />
         </>
     );

@@ -1,31 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { CSSTransition } from 'react-transition-group';
 import '../../style/mobile-menu.css';
 import { ButtonCloseModal, ModalBlur, ModalButton, ModalForm, ModalInput, ModalWrapper } from './StyleModal';
-
+import axios from "axios";
 
 const Modal = ({ openModal, setOpenModal }) => {
+    const API_PATH = 'send.php';
     const {
         register,
         formState: {
             errors,
-            isValid,
+            isValid
         },
         handleSubmit,
         reset
     } = useForm({
         mode: 'onBlur'
     });
-
     const closeModal = () => {
         setOpenModal(false);
-        document.body.removeAttribute('style');
         reset();
     };
 
-    const onSubmit = data => {
-        console.log(data);
+    const [mailSend, setMailSend] = useState(0);
+    const [sendError, setSendError] = useState(null);
+    const onSubmit = e => {
+        console.log(e);
+        axios({
+            method: 'post',
+            url: `${API_PATH}`,
+            headers: { 'content-type': 'application/json' },
+            data: e
+        })
+            .then(result => {
+                console.log(result);
+                setMailSend(result.data.sent);
+                result.data.message &&  setSendError(result.data.message);
+            })
+            .catch(error => {
+                setSendError(error.message);
+                console.log(error.message);
+            });
         reset();
     };
 
@@ -38,7 +54,7 @@ const Modal = ({ openModal, setOpenModal }) => {
                 mountOnEnter
                 unmountOnExit
             >
-                <ModalBlur onClick={closeModal} />
+                <ModalBlur onClick={closeModal}/>
             </CSSTransition>
             <CSSTransition
                 in={openModal}
@@ -95,11 +111,16 @@ const Modal = ({ openModal, setOpenModal }) => {
                             errors?.phone &&
                             <span>{errors?.phone.message}</span>
                         }
-                        <ModalButton disabled={!isValid} type="submit" >
+                        {
+                            sendError ? <span>{sendError}</span> :
+                                (mailSend === 1 || mailSend === true ?
+                                    <span>Спасибо, мы скоро с вами свяжемся!</span> : '')
+                        }
+                        <ModalButton disabled={!isValid} type="submit">
                             Оставьте заявку
                         </ModalButton>
                     </ModalForm>
-                    <ButtonCloseModal onClick={closeModal} />
+                    <ButtonCloseModal onClick={closeModal}/>
                 </ModalWrapper>
             </CSSTransition>
         </>

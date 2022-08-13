@@ -28,7 +28,6 @@ const Preview = ({ setOpenModal }) => {
 
     const hendlerOpenModal = () => {
         setOpenModal(prev => !prev);
-        document.body.style.overflow = 'hidden';
     };
 
     return (

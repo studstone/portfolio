@@ -79,6 +79,7 @@ export const ModalButton = styled(Button)`
     :disabled {
         background-color: #cea746;
         color: #0000005a;
+        box-shadow: none;
     }
 `;
 

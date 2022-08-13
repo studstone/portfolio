@@ -62,6 +62,10 @@ export const ModalInput = styled.input`
         color: black
     }
 
+    p {
+        color: green;
+    }
+
     @media ${device.laptop} {
         height: 5rem;
     }

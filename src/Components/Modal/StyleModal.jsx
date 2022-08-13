@@ -41,6 +41,10 @@ export const ModalForm = styled.form`
         color: #ff4444;
         font-size: 1.2rem;
     }
+
+    p {
+        color: green;
+    }
 `;
 
 export const ModalInput = styled.input`
